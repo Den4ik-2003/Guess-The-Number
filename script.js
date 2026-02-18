@@ -126,11 +126,11 @@ function auditNumber(number) {
   } else if (number > randomNumber) {
     counterNumber++;
     counter.innerText = counterNumber;
-    history(userNumberValue.value, "більше");
+    history(userNumberValue.value, "менше");
   } else if (number < randomNumber) {
     counterNumber++;
     counter.innerText = counterNumber;
-    history(userNumberValue.value, "менше");
+    history(userNumberValue.value, "більше");
   }
 }
 
@@ -155,7 +155,7 @@ const counter = document.getElementById("count");
 function history(number, message) {
   const block = document.createElement("div");
   block.classList.add("history-item");
-  block.innerText = `Ви ввели число ${number}, і воно ${message} загаданого!`;
+  block.innerText = `Ви ввели ${number}, але загадане число є ${message}!`;
   historyItem.appendChild(block);
 }
 
