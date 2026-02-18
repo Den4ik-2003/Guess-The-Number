@@ -12,7 +12,6 @@ const levelHard = document.getElementById("levelHard");
 const diapazoe = document.getElementById("diapazoe");
 let counterNumber = 0;
 let activeLevel = "eazy";
-setRecord(activeLevel);
 
 levelEazy.addEventListener("click", function () {
   diapazoe.innerText = "0-100";
@@ -74,6 +73,7 @@ function updateNumber() {
 
 updateRandomNumber.addEventListener("click", function () {
   updateNumber();
+  updateCounter();
   historyItem.innerHTML = "";
 });
 
@@ -87,7 +87,7 @@ checkNumberButton.addEventListener("click", function () {
       if (userNumberValue.value < 0 || userNumberValue.value > 100) {
         modalMessage("Ви ввели неправильні дані!");
       } else {
-        auditNumber(userNumberValue.value);
+        auditNumber(Number(userNumberValue.value));
         userNumberValue.value = "";
       }
     }
@@ -96,7 +96,7 @@ checkNumberButton.addEventListener("click", function () {
       if (userNumberValue.value < 0 || userNumberValue.value > 500) {
         modalMessage("Ви ввели неправильні дані!");
       } else {
-        auditNumber(userNumberValue.value);
+        auditNumber(Number(userNumberValue.value));
         userNumberValue.value = "";
       }
     }
@@ -105,7 +105,7 @@ checkNumberButton.addEventListener("click", function () {
       if (userNumberValue.value < 0 || userNumberValue.value > 1000) {
         modalMessage("Ви ввели неправильні дані!");
       } else {
-        auditNumber(userNumberValue.value);
+        auditNumber(Number(userNumberValue.value));
         userNumberValue.value = "";
       }
     }
@@ -194,8 +194,11 @@ if(level === "hard") {
 }
 }
 
+setRecord(activeLevel);
+
 function recordUser(level, counter) {
   if (level === "eazy") {
+    let eazyRecord = Number(localStorage.getItem("eazy")) || Infinity;
     if (counter <= eazyRecord) {
       localStorage.setItem("eazy", counter);
       recordEazyText.innerText = counter;
@@ -204,6 +207,7 @@ function recordUser(level, counter) {
   }
 
   if (level === "medium") {
+    let mediumRecord = Number(localStorage.getItem("medium")) || Infinity;
     if (counter <= mediumRecord) {
       localStorage.setItem("medium", counter);
       recordMediumText.innerText = counter;
@@ -212,6 +216,7 @@ function recordUser(level, counter) {
   }
 
   if (level === "hard") {
+    let hardRecord = Number(localStorage.getItem("hard")) || Infinity;
     if (counter <= hardRecord) {
       localStorage.setItem("hard", counter);
       recordHardText.innerText = counter;
@@ -219,3 +224,4 @@ function recordUser(level, counter) {
     }
   }
 }
+
