@@ -62,15 +62,12 @@ function updateNumber() {
   if (activeLevel == "eazy") {
     randomNumber = getRandomInt(0, 100);
     historyItem.innerHTML = "";
-    console.log(randomNumber);
   } else if (activeLevel == "medium") {
     randomNumber = getRandomInt(0, 500);
     historyItem.innerHTML = "";
-    console.log(randomNumber);
   } else if (activeLevel == "hard") {
     randomNumber = getRandomInt(0, 1000);
     historyItem.innerHTML = "";
-    console.log(randomNumber);
   }
 }
 
