@@ -12,6 +12,7 @@ const levelHard = document.getElementById("levelHard");
 const diapazoe = document.getElementById("diapazoe");
 let counterNumber = 0;
 let activeLevel = "eazy";
+setRecord(activeLevel);
 
 levelEazy.addEventListener("click", function () {
   diapazoe.innerText = "0-100";
@@ -138,7 +139,7 @@ const closeButton = document.querySelector(".close");
 
 closeButton.addEventListener("click", function () {
   modal.style.display = "none";
-  setRecord(activeLevel)
+  setRecord(activeLevel);
 });
 
 // ----- Modal Message -----
