@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вгадай число</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="game">
+      <div class="top-bar">
+        <div class="levels">
+          <button id="levelEazy" class="level active">Легкий</button>
+          <button id="levelMedium" class="level">Середній</button>
+          <button id="levelHard" class="level">Складний</button>
+        </div>
+      </div>
+
+      <h1>🎯 Вгадай число</h1>
+
+      <input type="number" id="userNumberValue" placeholder="Введи число" />
+
+      <div class="buttons">
+        <button class="primary">Перевірити</button>
+        <button class="secondary">Почати заново</button>
+      </div>
+
+      <div class="info">
+        <div class="attempts">
+          <div>Спроб:</div>
+          <div id="count">0</div>
+        </div>
+        <div class="diapazoe">
+          <div class="range">Діапазон:</div>
+          <div id="diapazoe">0–100</div>
+        </div>
+      </div>
+
+      <div class="records">
+        <h2>🏆 Рекорди</h2>
+        <div class="record-item">
+          <span>Легкий</span>
+          <div><span class="recordEazy">0</span><span> спроб</span></div>
+        </div>
+        <div class="record-item">
+          <span>Середній</span>
+          <div><span class="recordMedium">0</span><span> спроб</span></div>
+        </div>
+        <div class="record-item">
+          <span>Складний</span>
+          <div><span class="recordHard">0</span><span> спроб</span></div>
+        </div>
+      </div>
+
+      <div class="history">
+        <h2>📜 Історія</h2>
+        <div class="history-list"></div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-content">
+        <h2 class="modalInfo">Ти виграв!</h2>
+        <button class="close">Закрити</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
